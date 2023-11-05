@@ -4,6 +4,8 @@ const computeScore = (
   playerOneScore: number,
   playerTwoScore: number
 ): string => {
+
+    if (playerOneScore === 3 && playerTwoScore === 3)
   if (playerOneScore === 4) return "playerOne wins";
   //   if (playerOneScore === 3)
   //     return formatScore(playerScore(playerOneScore), Love);

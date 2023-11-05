@@ -74,4 +74,92 @@ describe("Tennis Kata", () => {
 
     expect(score).toBe("playerTwo wins");
   });
+  it("le joueur 1 a marqué 2 fois et le joueur 2 a marqué 1 fois ", () => {
+    let playerOneScore = 2;
+    let playerTwoScore = 1;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("30 - 15");
+  });
+  it("le joueur 1 a marqué 3 fois et le joueur 2 a marqué 1 fois ", () => {
+    let playerOneScore = 3;
+    let playerTwoScore = 1;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("40 - 15");
+  });
+  it("le joueur 1 a marqué 4 fois et le joueur 2 a marqué 1 fois, le joueur 1 gagne ", () => {
+    let playerOneScore = 4;
+    let playerTwoScore = 1;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("playerOne wins");
+  });
+  it("le joueur 1 a marqué 1 fois et le joueur 2 a marqué 2 fois ", () => {
+    let playerOneScore = 1;
+    let playerTwoScore = 2;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("15 - 30");
+  });
+  it("le joueur 1 a marqué 1 fois et le joueur 2 a marqué 3 fois ", () => {
+    let playerOneScore = 1;
+    let playerTwoScore = 3;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("15 - 40");
+  });
+  it("le joueur 1 a marqué 1 fois et le joueur 2 a marqué 4 fois, le joueur 2 gagne ", () => {
+    let playerOneScore = 1;
+    let playerTwoScore = 4;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("playerTwo wins");
+  });
+  it("le joueur 1 a marqué 1 fois et le joueur 2 marque 1 fois ", () => {
+    let playerOneScore = 1;
+    let playerTwoScore = 1;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("15 - 15");
+  });
+  it("le joueur 1 a marqué 1 fois et le joueur 2 marque 2 fois ", () => {
+    let playerOneScore = 1;
+    let playerTwoScore = 2;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("15 - 30");
+  });
+  it("le joueur 1 a marqué 3 fois et le joueur 2 marque 2 fois ", () => {
+    let playerOneScore = 3;
+    let playerTwoScore = 2;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("40 - 30");
+  });
+  it("le joueur 1 a marqué 3 fois et le joueur 2 marque 3 fois ", () => {
+    let playerOneScore = 3;
+    let playerTwoScore = 3;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("deuce");
+  });
+  // it("le joueur 1 a marqué 4 fois et le joueur 2 marque 3 fois ", () => {
+  //   let playerOneScore = 4;
+  //   let playerTwoScore = 3;
+
+  //   let score = computeScore(playerOneScore, playerTwoScore);
+
+  //   expect(score).toBe("AV - 40");
+  // });
 });
