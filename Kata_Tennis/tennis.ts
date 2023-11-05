@@ -4,8 +4,7 @@ const computeScore = (
   playerOneScore: number,
   playerTwoScore: number
 ): string => {
-
-    if (playerOneScore === 3 && playerTwoScore === 3)
+  if (playerOneScore === 3 && playerTwoScore === 3) return "deuce";
   if (playerOneScore === 4) return "playerOne wins";
   //   if (playerOneScore === 3)
   //     return formatScore(playerScore(playerOneScore), Love);
@@ -14,17 +13,16 @@ const computeScore = (
   //   if (playerOneScore === 1)
   //     return formatScore(playerScore(playerOneScore), Love);
   if (playerTwoScore === 4) return "playerTwo wins";
-//   if (playerTwoScore === 3) return formatScore(Love, playerScore(playerTwoScore));
-//   if (playerTwoScore === 2) return formatScore(Love, playerScore(playerTwoScore));
-//   if (playerTwoScore === 1) return formatScore(Love, playerScore(playerTwoScore));
+  //   if (playerTwoScore === 3) return formatScore(Love, playerScore(playerTwoScore));
+  //   if (playerTwoScore === 2) return formatScore(Love, playerScore(playerTwoScore));
+  //   if (playerTwoScore === 1) return formatScore(Love, playerScore(playerTwoScore));
 
-const displayPlayerOneScore = playerScore[playerOneScore];
-const displayPlayerTwoScore = playerScore[playerTwoScore];
-  
-//   return formatScore(playerScore(playerOneScore), Love);
-//   return formatScore(Love, playerScore(playerTwoScore));
-return formatScore(displayPlayerOneScore, displayPlayerTwoScore)
-  
+  const displayPlayerOneScore = playerScore[playerOneScore];
+  const displayPlayerTwoScore = playerScore[playerTwoScore];
+
+  //   return formatScore(playerScore(playerOneScore), Love);
+  //   return formatScore(Love, playerScore(playerTwoScore));
+  return formatScore(displayPlayerOneScore, displayPlayerTwoScore);
 };
 // function playerScore(score: number): string {
 //   if (score === 3) return "40";
@@ -33,11 +31,11 @@ return formatScore(displayPlayerOneScore, displayPlayerTwoScore)
 //   return Love;
 // }
 
-const playerScore :{[key: number] :string } ={
-    0 : Love,
-    1 : "15",
-    2 : "30",
-    3 : "40",
+const playerScore: { [key: number]: string } = {
+  0: Love,
+  1: "15",
+  2: "30",
+  3: "40",
 };
 function formatScore(playerOneScore: string, playerTwoScore: string): string {
   return playerOneScore + " - " + playerTwoScore;
