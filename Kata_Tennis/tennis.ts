@@ -16,20 +16,27 @@ const computeScore = (
 //   if (playerTwoScore === 2) return formatScore(Love, playerScore(playerTwoScore));
 //   if (playerTwoScore === 1) return formatScore(Love, playerScore(playerTwoScore));
 
-const displayPlayerOneScore = playerScore(playerOneScore);
-const displayPlayerTwoScore = playerScore(playerTwoScore);
+const displayPlayerOneScore = playerScore[playerOneScore];
+const displayPlayerTwoScore = playerScore[playerTwoScore];
   
 //   return formatScore(playerScore(playerOneScore), Love);
 //   return formatScore(Love, playerScore(playerTwoScore));
 return formatScore(displayPlayerOneScore, displayPlayerTwoScore)
   
 };
-function playerScore(score: number): string {
-  if (score === 3) return "40";
-  if (score === 2) return "30";
-  if (score === 1) return "15";
-  return Love;
-}
+// function playerScore(score: number): string {
+//   if (score === 3) return "40";
+//   if (score === 2) return "30";
+//   if (score === 1) return "15";
+//   return Love;
+// }
+
+const playerScore :{[key: number] :string } ={
+    0 : Love,
+    1 : "15",
+    2 : "30",
+    3 : "40",
+};
 function formatScore(playerOneScore: string, playerTwoScore: string): string {
   return playerOneScore + " - " + playerTwoScore;
 }
