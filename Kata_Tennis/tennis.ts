@@ -13,7 +13,7 @@ const computeScore = (
   return formatScore(displayPlayerOneScore, displayPlayerTwoScore);
 };
 
-const deuce = (playerOneScore: number, playerTwoScore: number): string => {
+const computeScoreWithDeuce = (playerOneScore: number, playerTwoScore: number): string => {
   if (playerOneScore === 3 && playerTwoScore === 4) return "avantage playerTwo";
   if (playerOneScore === 4 && playerTwoScore === 3) return "avantage playerOne";
   if (
@@ -34,4 +34,4 @@ function formatScore(playerOneScore: string, playerTwoScore: string): string {
   return playerOneScore + " - " + playerTwoScore;
 }
 
-export { computeScore, deuce };
+export { computeScoreWithDeuce };

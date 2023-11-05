@@ -1,12 +1,12 @@
 import { describe, test, expect, it } from "@jest/globals";
-import { computeScore, deuce } from "../tennis";
+import { computeScoreWithDeuce } from "../tennis";
 
 describe("Tennis Kata", () => {
   it("le jeu démarre, le score est de Love - Love ", () => {
     let playerOneScore = 0;
     let playerTwoScore = 0;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("Love - Love");
   });
@@ -14,7 +14,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 1;
     let playerTwoScore = 0;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("15 - Love");
   });
@@ -22,7 +22,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 2;
     let playerTwoScore = 0;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("30 - Love");
   });
@@ -30,7 +30,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 3;
     let playerTwoScore = 0;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("40 - Love");
   });
@@ -38,7 +38,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 4;
     let playerTwoScore = 0;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("playerOne wins");
   });
@@ -46,7 +46,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 0;
     let playerTwoScore = 1;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("Love - 15");
   });
@@ -54,7 +54,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 0;
     let playerTwoScore = 2;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("Love - 30");
   });
@@ -62,7 +62,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 0;
     let playerTwoScore = 3;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("Love - 40");
   });
@@ -70,7 +70,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 0;
     let playerTwoScore = 4;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("playerTwo wins");
   });
@@ -78,7 +78,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 2;
     let playerTwoScore = 1;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("30 - 15");
   });
@@ -86,7 +86,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 3;
     let playerTwoScore = 1;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("40 - 15");
   });
@@ -94,7 +94,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 4;
     let playerTwoScore = 1;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("playerOne wins");
   });
@@ -102,7 +102,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 1;
     let playerTwoScore = 2;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("15 - 30");
   });
@@ -110,7 +110,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 1;
     let playerTwoScore = 3;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("15 - 40");
   });
@@ -118,7 +118,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 1;
     let playerTwoScore = 4;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("playerTwo wins");
   });
@@ -126,7 +126,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 1;
     let playerTwoScore = 1;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("15 - 15");
   });
@@ -134,7 +134,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 1;
     let playerTwoScore = 2;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("15 - 30");
   });
@@ -142,7 +142,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 3;
     let playerTwoScore = 2;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("40 - 30");
   });
@@ -150,7 +150,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 3;
     let playerTwoScore = 3;
 
-    let score = deuce(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("deuce");
   });
@@ -158,7 +158,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 4;
     let playerTwoScore = 3;
 
-    let score = deuce(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("avantage playerOne");
   });
@@ -166,7 +166,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 5;
     let playerTwoScore = 3;
 
-    let score = deuce(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("playerOne wins");
   });
@@ -174,7 +174,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 3;
     let playerTwoScore = 5;
 
-    let score = deuce(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("playerTwo wins");
   });
@@ -182,7 +182,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 3;
     let playerTwoScore = 4;
 
-    let score = deuce(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("avantage playerTwo");
   });
@@ -190,7 +190,7 @@ describe("Tennis Kata", () => {
     let playerOneScore = 4;
     let playerTwoScore = 4;
 
-    let score = deuce(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("deuce");
   });
@@ -198,8 +198,24 @@ describe("Tennis Kata", () => {
     let playerOneScore = 4;
     let playerTwoScore = 4;
 
-    let score = deuce(playerOneScore, playerTwoScore);
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("deuce");
+  });
+  it("après 10 points marqués chacuns, affiche 'deuce'", () => {
+    let playerOneScore = 10;
+    let playerTwoScore = 10;
+
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("deuce");
+  });
+  it("après 10 points marqués chacuns, le joueur 1 marque 1 point: il prend l'avantage", () => {
+    let playerOneScore = 11;
+    let playerTwoScore = 10;
+
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("avantage playerOne");
   });
 });
