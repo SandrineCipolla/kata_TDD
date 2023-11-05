@@ -218,4 +218,12 @@ describe("Tennis Kata", () => {
 
     expect(score).toBe("avantage playerOne");
   });
+  it("après 10 points marqués chacuns, le joueur 2 marque 1 point: il prend l'avantage", () => {
+    let playerOneScore = 10;
+    let playerTwoScore = 11;
+
+    let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("avantage playerTwo");
+  });
 });

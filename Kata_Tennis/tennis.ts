@@ -17,11 +17,22 @@ const computeScoreWithDeuce = (
   playerOneScore: number,
   playerTwoScore: number
 ): string => {
-  if (bothPlayersHaveMoreThan3Points(playerOneScore, playerTwoScore)  
-    && playerOneScoreIs1PointHigher(playerOneScore, playerTwoScore))
+  if (
+    bothPlayersHaveMoreThan3Points(playerOneScore, playerTwoScore) &&
+    playerOneScoreIs1PointHigher(playerOneScore, playerTwoScore)
+  )
     return "avantage playerOne";
-  if (playerOneScore === 3 && playerTwoScore === 4) return "avantage playerTwo";
-  if (playerOneScore >= 3 && playerOneScore === playerTwoScore) return "deuce";
+  if (
+    bothPlayersHaveMoreThan3Points(playerOneScore, playerTwoScore) &&
+    playerTwoScoreIs1PointHigher(playerTwoScore, playerOneScore)
+  )
+    return "avantage playerTwo";
+
+  if (
+    bothPlayersHaveMoreThan3Points(playerOneScore, playerTwoScore) &&
+    playerScoreAreEqual(playerOneScore, playerTwoScore)
+  )
+    return "deuce";
 
   return computeScore(playerOneScore, playerTwoScore);
 };
@@ -32,13 +43,26 @@ const playerScore: { [key: number]: string } = {
   2: "30",
   3: "40",
 };
-function playerOneScoreIs1PointHigher(playerOneScore: number, playerTwoScore: number) {
-    return (playerOneScore - playerTwoScore) === 1;
+function playerTwoScoreIs1PointHigher(playerTwoScore: number, playerOneScore: number) {
+    return playerTwoScore - playerOneScore === 1;
 }
 
-function bothPlayersHaveMoreThan3Points(playerOneScore: number, playerTwoScore: number) {
-    return playerOneScore >= 3
-        && playerTwoScore >= 3;
+function playerScoreAreEqual(playerOneScore: number, playerTwoScore: number) {
+  return playerOneScore === playerTwoScore;
+}
+
+function playerOneScoreIs1PointHigher(
+  playerOneScore: number,
+  playerTwoScore: number
+) {
+  return playerOneScore - playerTwoScore === 1;
+}
+
+function bothPlayersHaveMoreThan3Points(
+  playerOneScore: number,
+  playerTwoScore: number
+) {
+  return playerOneScore >= 3 && playerTwoScore >= 3;
 }
 
 function formatScore(playerOneScore: string, playerTwoScore: string): string {
