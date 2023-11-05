@@ -1,5 +1,5 @@
 import { describe, test, expect, it } from "@jest/globals";
-import computeScore from "../tennis";
+import { computeScore, deuce } from "../tennis";
 
 describe("Tennis Kata", () => {
   it("le jeu démarre, le score est de Love - Love ", () => {
@@ -65,7 +65,7 @@ describe("Tennis Kata", () => {
     let score = computeScore(playerOneScore, playerTwoScore);
 
     expect(score).toBe("Love - 40");
-  }); 
+  });
   it("le joueur 2 a marqué 4 fois, le joueur 2 gagne ", () => {
     let playerOneScore = 0;
     let playerTwoScore = 4;
@@ -150,16 +150,56 @@ describe("Tennis Kata", () => {
     let playerOneScore = 3;
     let playerTwoScore = 3;
 
-    let score = computeScore(playerOneScore, playerTwoScore);
+    let score = deuce(playerOneScore, playerTwoScore);
 
     expect(score).toBe("deuce");
   });
-  // it("le joueur 1 a marqué 4 fois et le joueur 2 marque 3 fois ", () => {
-  //   let playerOneScore = 4;
-  //   let playerTwoScore = 3;
+  it("le score est deuce et le joueur 1 marque un 4ieme point:il a l'avantage ", () => {
+    let playerOneScore = 4;
+    let playerTwoScore = 3;
 
-  //   let score = computeScore(playerOneScore, playerTwoScore);
+    let score = deuce(playerOneScore, playerTwoScore);
 
-  //   expect(score).toBe("AV - 40");
-  // });
+    expect(score).toBe("avantage playerOne");
+  });
+  it("le score est avantage playerOne et le joueur 1 marque encore 1 point : il gagne ", () => {
+    let playerOneScore = 5;
+    let playerTwoScore = 3;
+
+    let score = deuce(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("playerOne wins");
+  });
+  it("le score est avantage playerTwo et le joueur 2 marque encore 1 point : il gagne ", () => {
+    let playerOneScore = 3;
+    let playerTwoScore = 5;
+
+    let score = deuce(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("playerTwo wins");
+  });
+  it("le score est deuce et le joueur 2 marque un 4ieme point:il a l'avantage ", () => {
+    let playerOneScore = 3;
+    let playerTwoScore = 4;
+
+    let score = deuce(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("avantage playerTwo");
+  });
+  it("le joueur 1 a l'avantage et le joueur 2 égalise", () => {
+    let playerOneScore = 4;
+    let playerTwoScore = 4;
+
+    let score = deuce(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("deuce");
+  });
+  it("le joueur 2 a l'avantage et le joueur 1 égalise", () => {
+    let playerOneScore = 4;
+    let playerTwoScore = 4;
+
+    let score = deuce(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("deuce");
+  });
 });
