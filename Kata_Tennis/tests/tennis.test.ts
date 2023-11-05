@@ -42,4 +42,12 @@ describe("Tennis Kata", () => {
 
     expect(score).toBe("playerOne wins");
   });
+  it("le joueur 2 marque, le score est de Love - 15 ", () => {
+    let playerOneScore = 0;
+    let playerTwoScore = 1;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("Love - 15");
+  });
 });

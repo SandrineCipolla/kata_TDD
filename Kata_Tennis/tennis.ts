@@ -5,12 +5,12 @@ const computeScore = (
   playerTwoScore: number
 ): string => {
   if (playerOneScore === 4) return "playerOne wins";
-  if (playerOneScore === 3)
-    return formatScore(playerScore(playerOneScore), Love);
-  if (playerOneScore === 2)
-    return formatScore(playerScore(playerOneScore), Love);
-  if (playerOneScore === 1)
-    return formatScore(playerScore(playerOneScore), Love);
+  //   if (playerOneScore === 3)
+  //     return formatScore(playerScore(playerOneScore), Love);
+  //   if (playerOneScore === 2)
+  //     return formatScore(playerScore(playerOneScore), Love);
+  //   if (playerOneScore === 1)
+  //     return formatScore(playerScore(playerOneScore), Love);
 
   return formatScore(playerScore(playerOneScore), Love);
 };
