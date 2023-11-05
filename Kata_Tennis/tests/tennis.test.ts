@@ -42,12 +42,36 @@ describe("Tennis Kata", () => {
 
     expect(score).toBe("playerOne wins");
   });
-  it("le joueur 2 marque, le score est de Love - 15 ", () => {
+  it("le joueur 2 marque , le score est de Love - 15 ", () => {
     let playerOneScore = 0;
     let playerTwoScore = 1;
 
     let score = computeScore(playerOneScore, playerTwoScore);
 
     expect(score).toBe("Love - 15");
+  });
+  it("le joueur 2 a marqué 2 fois, le score est de Love - 30 ", () => {
+    let playerOneScore = 0;
+    let playerTwoScore = 2;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("Love - 30");
+  });
+  it("le joueur 2 a marqué 3 fois, le score est de Love - 40 ", () => {
+    let playerOneScore = 0;
+    let playerTwoScore = 3;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("Love - 40");
+  }); 
+  it("le joueur 2 a marqué 4 fois, le joueur 2 gagne ", () => {
+    let playerOneScore = 0;
+    let playerTwoScore = 4;
+
+    let score = computeScore(playerOneScore, playerTwoScore);
+
+    expect(score).toBe("playerTwo wins");
   });
 });
