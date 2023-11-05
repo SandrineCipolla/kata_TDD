@@ -13,13 +13,18 @@ const computeScore = (
   return formatScore(displayPlayerOneScore, displayPlayerTwoScore);
 };
 
-const computeScoreWithDeuce = (playerOneScore: number, playerTwoScore: number): string => {
+const computeScoreWithDeuce = (
+  playerOneScore: number,
+  playerTwoScore: number
+): string => {
+  if (playerOneScore >= 3 
+    && playerOneScore > playerTwoScore 
+    && playerTwoScore >=3 
+    && (playerOneScore-playerTwoScore)===1)
+    return "avantage playerOne";
   if (playerOneScore === 3 && playerTwoScore === 4) return "avantage playerTwo";
   if (playerOneScore === 4 && playerTwoScore === 3) return "avantage playerOne";
-  if (
-    playerOneScore >= 3 && playerOneScore === playerTwoScore)
-  
-    return "deuce";
+  if (playerOneScore >= 3 && playerOneScore === playerTwoScore) return "deuce";
 
   return computeScore(playerOneScore, playerTwoScore);
 };
