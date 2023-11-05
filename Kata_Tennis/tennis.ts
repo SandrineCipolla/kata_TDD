@@ -17,13 +17,10 @@ const computeScoreWithDeuce = (
   playerOneScore: number,
   playerTwoScore: number
 ): string => {
-  if (playerOneScore >= 3 
-    && playerOneScore > playerTwoScore 
-    && playerTwoScore >=3 
-    && (playerOneScore-playerTwoScore)===1)
+  if (bothPlayersHaveMoreThan3Points(playerOneScore, playerTwoScore)  
+    && playerOneScoreIs1PointHigher(playerOneScore, playerTwoScore))
     return "avantage playerOne";
   if (playerOneScore === 3 && playerTwoScore === 4) return "avantage playerTwo";
-  if (playerOneScore === 4 && playerTwoScore === 3) return "avantage playerOne";
   if (playerOneScore >= 3 && playerOneScore === playerTwoScore) return "deuce";
 
   return computeScore(playerOneScore, playerTwoScore);
@@ -35,6 +32,15 @@ const playerScore: { [key: number]: string } = {
   2: "30",
   3: "40",
 };
+function playerOneScoreIs1PointHigher(playerOneScore: number, playerTwoScore: number) {
+    return (playerOneScore - playerTwoScore) === 1;
+}
+
+function bothPlayersHaveMoreThan3Points(playerOneScore: number, playerTwoScore: number) {
+    return playerOneScore >= 3
+        && playerTwoScore >= 3;
+}
+
 function formatScore(playerOneScore: string, playerTwoScore: string): string {
   return playerOneScore + " - " + playerTwoScore;
 }
