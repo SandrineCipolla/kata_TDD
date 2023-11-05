@@ -4,9 +4,9 @@ const computeScore = (
   playerOneScore: number,
   playerTwoScore: number
 ): string => {
-  if (playerOneScore >= 4) return "playerOne wins";
+  if (playerOneScore >= 4) return "playerOne wins"; 
   if (playerTwoScore >= 4) return "playerTwo wins";
-
+/* créer une fonction qui retourne le gagnant et une fonction une qui affiche*/
   const displayPlayerOneScore = playerScore[playerOneScore];
   const displayPlayerTwoScore = playerScore[playerTwoScore];
 
