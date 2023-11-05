@@ -12,11 +12,16 @@ const computeScore = (
   //   if (playerOneScore === 1)
   //     return formatScore(playerScore(playerOneScore), Love);
   if (playerTwoScore === 4) return "playerTwo wins";
-  if (playerTwoScore === 3) return formatScore(Love, playerScore(playerTwoScore));
-  if (playerTwoScore === 2) return formatScore(Love, playerScore(playerTwoScore));
-  if (playerTwoScore === 1) return formatScore(Love, playerScore(playerTwoScore));
+//   if (playerTwoScore === 3) return formatScore(Love, playerScore(playerTwoScore));
+//   if (playerTwoScore === 2) return formatScore(Love, playerScore(playerTwoScore));
+//   if (playerTwoScore === 1) return formatScore(Love, playerScore(playerTwoScore));
+
+const displayPlayerOneScore = playerScore(playerOneScore);
+const displayPlayerTwoScore = playerScore(playerTwoScore);
   
-  return formatScore(playerScore(playerOneScore), Love);
+//   return formatScore(playerScore(playerOneScore), Love);
+//   return formatScore(Love, playerScore(playerTwoScore));
+return formatScore(displayPlayerOneScore, displayPlayerTwoScore)
   
 };
 function playerScore(score: number): string {
