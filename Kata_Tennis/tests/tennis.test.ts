@@ -1,5 +1,5 @@
 import { describe, test, expect, it } from "@jest/globals";
-import { computeScoreWithDeuce } from "../tennis";
+import { computeScoreWithDeuce,TennisScore } from "../tennis";
 
 describe("Tennis Kata", () => {
   it("le jeu démarre, le score est de Love - Love ", () => {
@@ -8,7 +8,8 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("Love - Love");
+    expect(score).toBe(`${TennisScore[0]} - ${TennisScore[0]}`);
+
   });
   it("le joueur 1 marque, le score est de 15 - Love ", () => {
     let playerOneScore = 1;
@@ -16,7 +17,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("15 - Love");
+    expect(score).toBe(`${TennisScore[1]} - ${TennisScore[0]}`);
   });
   it("le joueur 1 a marqué 2 fois, le score est de 30 - Love ", () => {
     let playerOneScore = 2;
@@ -24,7 +25,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("30 - Love");
+    expect(score).toBe(`${TennisScore[2]} - ${TennisScore[0]}`);
   });
   it("le joueur 1 a marqué 3 fois, le score est de 40 - Love ", () => {
     let playerOneScore = 3;
@@ -32,7 +33,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("40 - Love");
+    expect(score).toBe(`${TennisScore[3]} - ${TennisScore[0]}`);
   });
   it("le joueur 1 a marqué 4 fois, le joueur 1 gagne ", () => {
     let playerOneScore = 4;
@@ -48,7 +49,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("Love - 15");
+    expect(score).toBe(`${TennisScore[0]} - ${TennisScore[1]}`);
   });
   it("le joueur 2 a marqué 2 fois, le score est de Love - 30 ", () => {
     let playerOneScore = 0;
@@ -56,7 +57,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("Love - 30");
+    expect(score).toBe(`${TennisScore[0]} - ${TennisScore[2]}`);
   });
   it("le joueur 2 a marqué 3 fois, le score est de Love - 40 ", () => {
     let playerOneScore = 0;
@@ -64,7 +65,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("Love - 40");
+    expect(score).toBe(`${TennisScore[0]} - ${TennisScore[3]}`);
   });
   it("le joueur 2 a marqué 4 fois, le joueur 2 gagne ", () => {
     let playerOneScore = 0;
@@ -80,7 +81,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("30 - 15");
+    expect(score).toBe(`${TennisScore[2]} - ${TennisScore[1]}`);
   });
   it("le joueur 1 a marqué 3 fois et le joueur 2 a marqué 1 fois ", () => {
     let playerOneScore = 3;
@@ -88,7 +89,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("40 - 15");
+    expect(score).toBe(`${TennisScore[3]} - ${TennisScore[1]}`);
   });
   it("le joueur 1 a marqué 4 fois et le joueur 2 a marqué 1 fois, le joueur 1 gagne ", () => {
     let playerOneScore = 4;
@@ -104,7 +105,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("15 - 30");
+    expect(score).toBe(`${TennisScore[1]} - ${TennisScore[2]}`);
   });
   it("le joueur 1 a marqué 1 fois et le joueur 2 a marqué 3 fois ", () => {
     let playerOneScore = 1;
@@ -112,7 +113,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("15 - 40");
+    expect(score).toBe(`${TennisScore[1]} - ${TennisScore[3]}`);
   });
   it("le joueur 1 a marqué 1 fois et le joueur 2 a marqué 4 fois, le joueur 2 gagne ", () => {
     let playerOneScore = 1;
@@ -128,7 +129,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("15 - 15");
+    expect(score).toBe(`${TennisScore[1]} - ${TennisScore[1]}`);
   });
   it("le joueur 1 a marqué 1 fois et le joueur 2 marque 2 fois ", () => {
     let playerOneScore = 1;
@@ -136,7 +137,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("15 - 30");
+    expect(score).toBe(`${TennisScore[1]} - ${TennisScore[2]}`);
   });
   it("le joueur 1 a marqué 3 fois et le joueur 2 marque 2 fois ", () => {
     let playerOneScore = 3;
@@ -144,7 +145,7 @@ describe("Tennis Kata", () => {
 
     let score = computeScoreWithDeuce(playerOneScore, playerTwoScore);
 
-    expect(score).toBe("40 - 30");
+    expect(score).toBe(`${TennisScore[3]} - ${TennisScore[2]}`);
   });
   it("le joueur 1 a marqué 3 fois et le joueur 2 marque 3 fois ", () => {
     let playerOneScore = 3;
